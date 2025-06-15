@@ -475,9 +475,10 @@ Changing styles
 
 
 
-
+//----------------------------------------
 //----------------------------------------
 // 4. creating and deleting element
+//----------------------------------------
 //----------------------------------------
 
 
@@ -549,3 +550,67 @@ rrr.remove();// removes only the first button (just comment it to see the differ
 
             The element was already removed, so it has no parent left.]
 */
+
+
+
+
+
+//-------------------------------------------------
+//-------------------------------------------------
+//5.📘 Event Handling in JavaScript
+//-------------------------------------------------
+//-------------------------------------------------
+
+
+/*
+🔹 What is an Event?
+An event is a change or action that happens in the browser, usually triggered by:
+
+The user (click, type, scroll, etc.)
+
+The system (page load, resize, etc.)
+
+🔹 Event Listener
+An event listener listens for a specific event on an element.
+If that event occurs, the listener executes the associated function.
+
+⚠️ Note:
+If no listener is added for an event, even if the event occurs, nothing will happen.
+*/
+
+
+
+//5.a: 📌 1. click (Mouse Event)
+//When?
+//Occurs when an element is clicked.
+let vrsu=document.querySelector("#brsu")
+vrsu.addEventListener('click', function(){alert("You clicked the button!")})
+//🔹 Used for: Buttons, links, icons — user interactions.
+
+
+//5.b: 📌 2. mouseover (Mouse Event)
+
+document.getElementById("hoverdiv").addEventListener("mouseover", function(){this.style.backgroundColor="red"})
+document.getElementById("hoverdiv").addEventListener("mouseout",function(){this.style.backgroundColor="green"})
+
+
+//5.c: 📌 3. keydown (Keyboard Event)
+//When?
+//Fires when any key is pressed down.
+document.getElementById("textInput").addEventListener("keydown",function(event){console.log("key pressed: ", event.key)})//at the place of even you can put anything ie; any variable.
+//🔹 Used for: Game controls, form shortcuts, live validation.
+
+//5.d: 📌 4. input (Form Event)
+//When?
+//Fires every time the input value changes (by typing, pasting, etc.)
+
+document.getElementById("liveinput").addEventListener("input",function(){document.getElementById("output").textContent=this.value})
+//🔹 Used for: Live preview, validation, search suggestions.
+
+
+
+//5.e: 📌 5. change (Form Event)
+//When?
+//Fires when the element loses focus and the value is changed (used mostly with <select>, <input type="checkbox">, etc.)
+document.getElementById("dropdown").addEventListener("change", function(){alert("You Selected: " +this.value)})
+//🔹 Used for: Dropdowns, checkboxes, radio buttons, date pickers.
